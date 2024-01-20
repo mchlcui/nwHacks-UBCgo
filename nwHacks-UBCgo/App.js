@@ -18,14 +18,20 @@ function BottomNavBar() {
       <navBar.Screen name="Courses" component={Courses} options={
         {
           title: "Courses",
-          headerTitleAlign: "left"
+          headerTitleAlign: "left",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? "newspaper" : "newspaper-outline"} size={24} color={color} />
+          )
         }
       } />
 
       <navBar.Screen name="Dashboard" component={Dashboard} options={
         {
           title: "Dashboard",
-          headerTitleAlign: "left"
+          headerTitleAlign: "left",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? "home" : "home-outline"} size={24} color={color} />
+          )
         }
       } />
 
