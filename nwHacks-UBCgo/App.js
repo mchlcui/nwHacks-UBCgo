@@ -1,12 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Course from './course.js';
 
 export default function App() {
+  // Logs.enableExpoCliLogging();
+  console.log("hello");
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Alex is fat!</Text>
+      <Course />
       <StatusBar style="auto" />
     </View>
+    
   );
 }
 
