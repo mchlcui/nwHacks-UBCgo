@@ -1,7 +1,7 @@
 import { BottomTabBar, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import Dashboard from './screens/Dashboard';
 import Courses from './screens/Courses';
@@ -50,4 +50,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  btnContainer: {
+    elevation: 8,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#3232a8",
+    borderRadius: 10,
+    // paddingVertical: 10,
+    // paddingHorizontal: 12,
+    height: 100,
+    width: 100
+  },
+  btnStyle: {
+    color:"white",
+    fontWeight: "bold",
+    fontSize: 16
+  }
 });
