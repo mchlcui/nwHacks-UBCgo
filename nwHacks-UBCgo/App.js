@@ -5,6 +5,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import Dashboard from './screens/Dashboard';
 import Courses from './screens/Courses';
+import Other from './screens/Settings';
 
 const navBar = createBottomTabNavigator();
 
@@ -31,6 +32,16 @@ function BottomNavBar() {
           headerTitleAlign: "left",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name={focused ? "home" : "home-outline"} size={24} color={color} />
+          )
+        }
+      } />
+
+      <navBar.Screen name="Settings" component={Settings} options={
+        {
+          title: "Settings",
+          headerTitleAlign: "left",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? "settings" : "settings-outline"} size={24} color={color} />
           )
         }
       } />
