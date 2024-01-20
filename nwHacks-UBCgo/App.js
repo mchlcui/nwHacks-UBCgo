@@ -1,12 +1,45 @@
+import { BottomTabBar, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import Dashboard from './screens/Dashboard';
+import Courses from './screens/Courses';
+
+const navBar = createBottomTabNavigator();
+
+function BottomNavBar() {
+  return (
+    <navBar.Navigator initialRouteName='Dashboard' screenOptions={{
+      tabBarActiveTintColor: "navy",
+      tabBarInactiveTintColor: "gray",
+    }}>
+
+      <navBar.Screen name="Courses" component={Courses} options={
+        {
+          title: "Courses",
+          headerTitleAlign: "left"
+        }
+      } />
+
+      <navBar.Screen name="Dashboard" component={Dashboard} options={
+        {
+          title: "Dashboard",
+          headerTitleAlign: "left"
+        }
+      } />
+
+    </navBar.Navigator>
+  )
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <NavigationContainer>
+        <BottomNavBar></BottomNavBar>
+      </NavigationContainer>
+    </>
   );
 }
 
