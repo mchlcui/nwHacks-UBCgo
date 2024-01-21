@@ -1,7 +1,10 @@
 import { Linking, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import { Header } from 'react-native-elements';
 
 const Dashboard = ({ navigation }) => {
+    const iconSize = 30;
+
     return (
         <View style={styles.container}>
             <Header containerStyle={styles.header}
@@ -13,6 +16,7 @@ const Dashboard = ({ navigation }) => {
                     <Text style={styles.btnTxt}>
                         Courses
                     </Text>
+                    <Ionicons style={styles.icon} name="school-outline" size={iconSize} color={"white"}></Ionicons>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.btn} onPress={() =>
@@ -21,6 +25,7 @@ const Dashboard = ({ navigation }) => {
                     <Text style={styles.btnTxt}>
                         Weather
                     </Text>
+                    <Ionicons style={styles.icon} name="rainy-outline" size={iconSize} color={"white"}></Ionicons>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.btn} onPress={() =>
@@ -29,6 +34,7 @@ const Dashboard = ({ navigation }) => {
                     <Text style={styles.btnTxt}>
                         Library
                     </Text>
+                    <Ionicons style={styles.icon} name="library-outline" size={iconSize} color={"white"}></Ionicons>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.btn} onPress={() =>
@@ -37,12 +43,14 @@ const Dashboard = ({ navigation }) => {
                     <Text style={styles.btnTxt}>
                         Contacts
                     </Text>
+                    <Ionicons style={styles.icon} name="people-outline" size={iconSize} color={"white"}></Ionicons>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.btn} onPress={handleUPassPress}>
                     <Text style={styles.btnTxt}>
                         UPass
                     </Text>
+                    <Ionicons style={styles.icon} name="bus-outline" size={iconSize} color={"white"}></Ionicons>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.btn} onPress={() =>
@@ -51,6 +59,7 @@ const Dashboard = ({ navigation }) => {
                     <Text style={styles.btnTxt}>
                         Dining
                     </Text>
+                    <Ionicons style={styles.icon} name="fast-food-outline" size={iconSize} color={"white"}></Ionicons>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={styles.btn} onPress={() =>
@@ -59,6 +68,7 @@ const Dashboard = ({ navigation }) => {
                     <Text style={styles.btnTxt}>
                         Events
                     </Text>
+                    <Ionicons style={styles.icon} name="megaphone-outline" size={iconSize} color={"white"}></Ionicons>
                 </TouchableOpacity>
             </View>
         </View>
@@ -104,6 +114,9 @@ const styles = StyleSheet.create({
         color: "white",
         fontWeight: "bold",
         fontSize: 16
+    }, 
+    icon: {
+        marginTop: 10
     }
 });
 

@@ -32,7 +32,7 @@ function BottomNavBar() {
             title: "Courses",
             headerShown: false,
             tabBarIcon: ({ color, focused }) => (
-              <Ionicons name={focused ? "newspaper" : "newspaper-outline"} size={24} color={color} />
+              <Ionicons name={focused ? "school" : "school-outline"} size={24} color={color} />
             )
           }
         } />
