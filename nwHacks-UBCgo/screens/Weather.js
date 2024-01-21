@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
-import { Card } from "react-native-paper";
+import { Card, Divider } from "react-native-paper";
 
 const LAT = 49.2606;
 const LONG = -123.2460;
@@ -12,6 +12,8 @@ const Weather = () => {
     const [low, setLow] = useState(0.0);
     const [high, setHigh] = useState(0.0);
     const [weatherType, setWeatherType] = useState("");
+    const [pressure, setPressure] = useState(0.0);
+    const [humidity, setHumidity] = useState(0.0);
 
 
     fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + LAT + "&lon=" + LONG + "&appid=" + KEY)
@@ -20,20 +22,29 @@ const Weather = () => {
             setTemp(data.main.temp);
             setLow(data.main.temp_min);
             setHigh(data.main.temp_max);
-            setWeatherType(data.weather.main);
+            setWeatherType(data.weather[0].main);
         })
 
     return (
         <View>
             <Card style={styles.weatherCard}>
-                <Card.Title style={styles.weatherTitle} title="UBC" />
+                <Card.Title titleStyle={styles.weatherTitle} subtitleStyle={styles.weatherSubtitle} title="UBC" subtitle="Vancouver, B.C." />
+                <Divider horizontalInset={true} bold={true}></Divider>
                 <Card.Content>
-                    <Text variant="bodymedium">
-                        current temperature: {(temp - 273.15).toFixed(1)}
-                        low: {(low - 273.15).toFixed(1)}
-                        high: {(high - 273.15).toFixed(1)}
-                        weather type: {weatherType}</Text>
+                    <Text style={styles.currentTemp}>
+                        {(temp - 273.15).toFixed(1)}° C
+                    </Text>
+                    <Text style={styles.body}>
+                        L: {(low - 273.15).toFixed(1)} H: {(high - 273.15).toFixed(1)}</Text>
+                    <Text style={styles.text}>
+                        {weatherType}
+                    </Text>
+                    <Divider horizontalInset={true} bold={true}></Divider>
                 </Card.Content>
+            </Card>
+
+            <Card>
+
             </Card>
         </View>
     )
@@ -42,11 +53,36 @@ const Weather = () => {
 const styles = StyleSheet.create({
     weatherCard: {
         margin: 24,
-        textAlign: "center"
     },
 
     weatherTitle: {
+        paddingTop: 24,
+        margin: 24,
+        fontSize: 36,
+        alignItems: "center",
+        justifyContent: "center",
         textAlign: "center"
+    },
+
+    weatherSubtitle: {
+        textAlign: "center",
+        marginBottom: 8
+    },
+
+    currentTemp: {
+        marginTop: 56,
+        textAlign: "center",
+        fontSize: 28
+    },
+
+    body: {
+        textAlign: "center",
+    },
+
+    text: {
+        textAlign: "center",
+        marginBottom: 56,
+        fontWeight: "700"
     }
 })
 
