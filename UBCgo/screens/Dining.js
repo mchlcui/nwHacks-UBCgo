@@ -3,7 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import { useEffect, useState } from 'react';
 import { Card } from 'react-native-paper';
 
-const themeColor = "#3232a8";
+const themeColor = "#6488ea";
 
 let POIs = [
     {
@@ -340,10 +340,10 @@ const Dining = () => {
     return (
         <View style={styles.container}>
 
-            <Text style={styles.title}>
+            {/* <Text style={styles.title}>
                 Dining options in the area
 
-            </Text>
+            </Text> */}
 
             <MapView
                 provider={PROVIDER_GOOGLE}
@@ -370,9 +370,9 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     map: {
-        width: '90%',
-        height: '90%',
-        borderWidth: 4,
+        width: '95%',
+        height: '95%',
+        borderWidth: 3,
         borderColor: themeColor,
         borderRadius: 8
     },

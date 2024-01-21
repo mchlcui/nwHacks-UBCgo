@@ -139,7 +139,9 @@ const styles = StyleSheet.create({
     courseCard: {
         margin: 24,
         textAlign: "center",
-        backgroundColor: "white"
+        backgroundColor: "white",
+        shadowColor: "black",
+        shadowRadius: 10
     },
 
     courseTitle: {
