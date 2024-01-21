@@ -100,6 +100,51 @@ let POIs = [
         },
         description: ""
     },
+
+    {
+        title: "Koerner's Pub",
+        location: {
+            latitude: 49.26856328155255,
+            longitude: -123.25813908957626
+        },
+        description: ""
+    },
+
+    {
+        title: "The Point",
+        location: {
+            latitude: 49.262233028531654,
+            longitude:  -123.25552833908395
+        },
+        description: ""
+    },
+
+    {
+        title: "Gallery Patio & Lounge",
+        location: {
+            latitude: 49.26698549623312,
+            longitude:  -123.25021370119931
+        },
+        description: ""
+    },
+
+    {
+        title: "AMS Student Nest (Food Court)",
+        location: {
+            latitude: 49.26675199110414,
+            longitude: -123.24958582078061
+        },
+        description: ""
+    },
+
+    {
+        title: "Orchard Commons (Food Court)",
+        location: {
+            latitude: 49.260137118748396, 
+            longitude: -123.25053955257721
+        },
+        description: ""
+    }
 ]
 
 const Dining = () => {

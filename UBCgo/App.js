@@ -64,17 +64,17 @@ function BottomNavBar() {
 function HomeStack() {
   return (
     <Stack.Navigator 
-      screenOptions={{
-        headerStyle: { // navbar header background 
-          backgroundColor: 'black',
-        },
-        headerTitleStyle: { // navbar header text
-          color: 'white'
-        },
-      }}
+      // screenOptions={{
+      //   headerStyle: { // navbar header background 
+      //     backgroundColor: 'black',
+      //   },
+      //   headerTitleStyle: { // navbar header text
+      //     color: 'white'
+      //   },
+      // }}
       initialRouteName='Dashboard'>
       <Stack.Screen name='Dashboard' component={Dashboard} />
-      <Stack.Screen name='Courses' headerTitleStyle={backgroundColor="black"} component={Courses} />
+      <Stack.Screen name='Courses' component={Courses} />
       <Stack.Screen name='Weather' component={Weather} />
       <Stack.Screen name='Settings' component={Settings} />
       <Stack.Screen name='CoursesDetail' component={CoursesDetail} />
@@ -87,14 +87,7 @@ function HomeStack() {
 
 function CourseStack() {
   return (
-    <Stack.Navigator initialRouteName='Courses' screenOptions={{
-      headerStyle: { // navbar header background 
-        backgroundColor: 'black',
-      },
-      headerTitleStyle: { // navbar header text
-        color: 'white'
-      },
-    }}>
+    <Stack.Navigator initialRouteName='Courses'>
       <Stack.Screen name='Courses' component={Courses} />
       <Stack.Screen name='CoursesDetail' component={CoursesDetail} />
     </Stack.Navigator>
@@ -103,7 +96,7 @@ function CourseStack() {
 
 export default function App() {
   const navTheme = DefaultTheme;
-  navTheme.colors.background = 'black'; // color of background of every page
+  navTheme.colors.background = 'white'; // color of background of every page
 
   return (
     <>

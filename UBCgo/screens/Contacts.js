@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   sectionHeader: {
-    color: "white",
+    color: "black",
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 15,
@@ -61,13 +61,13 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   label: {
-    color: "white",
+    color: "black",
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 4,
   },
   value: {
-    color: "white",
+    color: "black",
     fontSize: 18,
     marginBottom: 15,
   },

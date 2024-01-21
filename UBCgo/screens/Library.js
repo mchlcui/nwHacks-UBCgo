@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     bodyText: {
         textAlign: "center",
         fontWeight: "bold",
-        color: "white"
+        color: "black"
     }
 });
 
