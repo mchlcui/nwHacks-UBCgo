@@ -20,21 +20,21 @@ const themeColor = "#3232a8"; // #3232a8
 function BottomNavBar() {
   return (
     <navBar.Navigator
-    initialRouteName='Dashboard' screenOptions={{
-      tabBarActiveTintColor: themeColor,
-      tabBarInactiveTintColor: "gray",
-    }}>
+      initialRouteName='Dashboard' screenOptions={{
+        tabBarActiveTintColor: themeColor,
+        tabBarInactiveTintColor: "gray",
+      }}>
 
       <navBar.Screen name="Courses" component={CourseStack}
-      options={
-        {
-          title: "Courses",
-          headerShown: false,
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? "newspaper" : "newspaper-outline"} size={24} color={color} />
-          )
-        }
-      } />
+        options={
+          {
+            title: "Courses",
+            headerShown: false,
+            tabBarIcon: ({ color, focused }) => (
+              <Ionicons name={focused ? "newspaper" : "newspaper-outline"} size={24} color={color} />
+            )
+          }
+        } />
 
       <navBar.Screen name="Dashboard" component={HomeStack} options={
         {
@@ -46,13 +46,13 @@ function BottomNavBar() {
         }
       } />
 
-      <navBar.Screen name="Settings" component={Settings} options={
+      <navBar.Screen name="Dining" component={Dining} options={
         {
-          title: "Settings",
+          title: "Dining",
           headerTitleAlign: "center",
           // headerStyle: "black",
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? "settings" : "settings-outline"} size={24} color={color} />
+            <Ionicons name={focused ? "fast-food" : "fast-food-outline"} size={24} color={color} />
           )
         }
       } />
@@ -63,7 +63,7 @@ function BottomNavBar() {
 
 function HomeStack() {
   return (
-    <Stack.Navigator 
+    <Stack.Navigator
       // screenOptions={{
       //   headerStyle: { // navbar header background 
       //     backgroundColor: 'black',
