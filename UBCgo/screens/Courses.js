@@ -1,9 +1,11 @@
 
 import React, { useEffect, useState } from "react";
-import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { ScrollView, StyleSheet, TouchableOpacity, LogBox } from 'react-native';
 import SearchBar from "react-native-dynamic-search-bar";
 import { Divider, Text } from 'react-native-elements';
 import { Card } from "react-native-paper";
+
+LogBox.ignoreAllLogs(); // ignores all warnings
 
 const Course = ({ navigation }) => {
 
