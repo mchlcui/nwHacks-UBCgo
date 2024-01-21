@@ -48,13 +48,21 @@ const Dashboard = ({ navigation }) => {
                     Dining
                 </Text>
             </TouchableOpacity>
+
+            <TouchableOpacity style={styles.btnContainer} onPress={() =>
+                navigation.navigate("Events")
+            }>
+                <Text style={styles.btnStyle}>
+                    Events
+                </Text>
+            </TouchableOpacity>
         </View>
     )
 }
 
 const handleUPassPress = () => {
     Linking.openURL('https://upassbc.translink.ca/');
-    };
+};
 
 const styles = StyleSheet.create({
     container: {
