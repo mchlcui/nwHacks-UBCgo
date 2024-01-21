@@ -6,11 +6,11 @@ import { Divider, Text } from 'react-native-elements';
 import { Card } from "react-native-paper";
 
 const Course = ({ navigation }) => {
-    
+
     const [searchText, setSearchText] = useState('');
     const [spinnerVisibility, setSpinnerVisibility] = useState(false);
     const [courses, setCourses] = useState([]);
-    
+
 
     async function getCourses(text) {
 
@@ -34,7 +34,7 @@ const Course = ({ navigation }) => {
             request.send();
         });
     }
-    
+
 
     useEffect(() => {
         setCourses([]);
@@ -42,15 +42,15 @@ const Course = ({ navigation }) => {
     }, [searchText]);
 
     async function demo() {
-        
+
         await search();
     }
-    
+
 
     async function search() {
         if (searchText == "") return;
         console.log("Searching for " + searchText);
-    
+
         await new Promise(async (resolve, reject) => {
             setTimeout(async () => {
                 await getCourses(searchText); // Wait for getCourses to complete
@@ -61,10 +61,10 @@ const Course = ({ navigation }) => {
             }, 0);
         });
 
-        
+
     }
-    
-    
+
+
     const handleOnChangeText = (text) => {
         // Visible the spinner
         setSearchText(text);
@@ -75,47 +75,47 @@ const Course = ({ navigation }) => {
         // This could be inside an async function or useEffect depending on your logic
     };
 
-    
+
     // for (let i = 0; i < courses.length; i++) {
     //     console.log(courses[i].code);
     // }
     return (
-        
+
         <ScrollView style={styles.scrollView} id="courses-container">
-            
+
 
             <SearchBar
-            
-            fontSize={24}
-            fontColor="#fdfdfd"
-            iconColor="#fdfdfd"
-            shadowColor="#282828"
-            // cancelIconColor="green"
-            backgroundColor="white"
-            spinnerVisibility={spinnerVisibility}
-            placeholder="Search any courses ..."
-            fontFamily="BurbankBigCondensed-Black"
-            // shadowStyle={styles.searchBarShadowStyle}
-            onChangeText={handleOnChangeText}
-            
+
+                fontSize={24}
+                fontColor="#fdfdfd"
+                iconColor="#fdfdfd"
+                shadowColor="#282828"
+                // cancelIconColor="green"
+                backgroundColor="white"
+                spinnerVisibility={spinnerVisibility}
+                placeholder="Search any courses ..."
+                fontFamily="BurbankBigCondensed-Black"
+                // shadowStyle={styles.searchBarShadowStyle}
+                onChangeText={handleOnChangeText}
+
             />
 
-            
+
             <ScrollView style={styles.scrollView}>
-                
+
                 {courses.map((course, i) => {
-                    {/* <Text>course.</Text> */}
-                    
+                    {/* <Text>course.</Text> */ }
+
                     if (searchText.length >= 3) {
                         return (
-                            <TouchableOpacity key={i} onPress={() => navigation.navigate('CoursesDetail', {course})}>
-                                <Card key ={i} style={styles.courseCard}>
-                                
-                                    <Card.Title style={styles.courseTitle} title={course.code} />
+                            <TouchableOpacity key={i} onPress={() => navigation.navigate('CoursesDetail', { course })}>
+                                <Card key={i} style={styles.courseCard}>
+
+                                    <Card.Title style={styles.courseTitle} titleStyle={styles.courseText} title={course.code} />
                                     <Divider horizontalInset={true} bold={true}></Divider>
                                     <Card.Content>
-                                        <Text>{course.name}</Text>
-                                        <Text>Credit:{course.cred}</Text>
+                                        <Text style={styles.courseText}>{course.name}</Text>
+                                        <Text style={styles.courseText}>Credit:{course.cred}</Text>
                                         <Divider horizontalInset={true} bold={true}></Divider>
                                     </Card.Content>
                                 </Card>
@@ -125,29 +125,35 @@ const Course = ({ navigation }) => {
                         )
                     }
                 })}
-                
+
             </ScrollView>
 
         </ScrollView>
-        
+
     );
 }
 
 const styles = StyleSheet.create({
     courseCard: {
         margin: 24,
-        textAlign: "center"
+        textAlign: "center",
+        backgroundColor: "#3232a8"
     },
 
     courseTitle: {
         paddingTop: 24,
-        margin: 24,
+        margin: 10,
         fontSize: 36,
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center"
     },
-    
+
+    courseText: {
+        margin: 14,
+        color: "white"
+    },
+
 
     scrollView: {
         flex: 1,
