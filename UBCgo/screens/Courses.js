@@ -90,7 +90,8 @@ const Course = ({ navigation }) => {
                 fontColor="#fdfdfd"
                 iconColor="#fdfdfd"
                 shadowColor="#282828"
-                margin={8}
+                margin={8
+                }
                 // cancelIconColor="green"
                 backgroundColor="white"
                 spinnerVisibility={spinnerVisibility}
@@ -112,11 +113,11 @@ const Course = ({ navigation }) => {
                             <TouchableOpacity key={i} onPress={() => navigation.navigate('CoursesDetail', { course })}>
                                 <Card key={i} style={styles.courseCard}>
 
-                                    <Card.Title style={styles.courseTitle} titleStyle={styles.courseText} title={course.code} />
-                                    <Divider horizontalInset={true} bold={true}></Divider>
+                                    <Card.Title titleStyle={styles.courseText} title={course.code} />
                                     <Card.Content>
+                                        <Divider horizontalInset={true} bold={true}></Divider>
                                         <Text style={styles.courseText}>{course.name}</Text>
-                                        <Text style={styles.courseText}>Credit:{course.cred}</Text>
+                                        <Text style={styles.courseText}>Credit: {course.cred}</Text>
                                         <Divider horizontalInset={true} bold={true}></Divider>
                                     </Card.Content>
                                 </Card>
