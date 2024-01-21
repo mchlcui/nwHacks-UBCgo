@@ -11,6 +11,7 @@ import Dashboard from './screens/Dashboard';
 import Settings from './screens/Settings';
 import Weather from './screens/Weather';
 import Library from './screens/Library'
+import Dining from './screens/Dining';
 
 const navBar = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -79,6 +80,7 @@ function HomeStack() {
       <Stack.Screen name='CoursesDetail' component={CoursesDetail} />
       <Stack.Screen name='Library' component={Library} />
       <Stack.Screen name='Contacts' component={Contacts} />
+      <Stack.Screen name='Dining' component={Dining} />
     </Stack.Navigator>
   )
 }
