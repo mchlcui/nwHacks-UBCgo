@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     btnContainer: {
       elevation: 8,
       alignItems: "center",
-      justifyContent: "center",
+
       backgroundColor: "#3232a8",
       borderRadius: 10,
       // paddingVertical: 10,

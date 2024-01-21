@@ -11,19 +11,28 @@
   "dependencies": {
     "@expo/metro-runtime": "^3.1.1",
     "@react-navigation/bottom-tabs": "^6.5.11",
+    "cors": "^2.8.5",
     "expo": "~50.0.2",
     "expo-status-bar": "~1.11.1",
+    "puppeteer": "^21.7.0",
+    "puppeteer-core": "^21.7.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.73.2",
     "react-native-animated-spinkit": "^1.5.2",
     "react-native-bounceable": "^0.2.1",
     "react-native-dynamic-search-bar": "github:WrathChaos/react-native-dynamic-search-bar#expo",
+    "react-native-paper": "^5.12.1",
     "react-native-table-component": "^1.2.2",
     "react-native-web": "~0.19.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
   },
-  "private": true
+  "private": true,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "types": "module"
 }
