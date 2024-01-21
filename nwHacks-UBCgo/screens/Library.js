@@ -1,22 +1,6 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Linking } from 'react-native';
 import { Divider } from 'react-native-paper';
 import { Table, TableWrapper, Row, Rows } from 'react-native-table-component';
-
-const puppeteer = require('puppeteer');
-
-async function scrapeLibrary(url) {
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    page.goto(url);
-
-    const [el] = await page.$x('//*[@id="ikblc"]/section[1]/header/h1/a')
-    const src = await el.getProperty('src');
-    const srcTxt = await src.jsonValue(); 
-
-    console.log({srcTxt});
-}
-
-scrapeLibrary('https://hours.library.ubc.ca/#all');
 
 const LibraryComponent = ({name, hours, address, website}) => {
     libraryData = {
@@ -24,25 +8,22 @@ const LibraryComponent = ({name, hours, address, website}) => {
         tableData: [
           ["Open from " + hours[0] + " to " + hours[1]],
           [address],
+          // Button redirecting to library website
           [<TouchableOpacity>
             <Text style={styles.bodyText}>
-                <a href={website}> More Details </a>
+                <Text onPress={() => Linking.openURL(website)}> More Details >> </Text> 
             </Text>
            </TouchableOpacity>]
         ]
     }
-
-    // let currentDate = new Date();
-    // console.log("TIME: ", currentDate());
-
-    // if I
-    // libraryData.tableData[2][0] = "TEST";
+    
     return (
         <View style={styles.container}>
             <Table style={styles.tableStyle}>
                 <Row data={libraryData.tableHead} style={styles.head} textStyle={styles.headerText}/>
                 <Divider/>
                 <Rows data={libraryData.tableData} style={styles.body} textStyle={styles.bodyText}/>
+                <Divider/>
             </Table>
         </View>
     )
@@ -56,6 +37,9 @@ const Library = () => {
 
             <LibraryComponent name={"Koerner Library"} hours={["7:30am", "10pm"]} address={"1958 Main Mall"} 
             website={"https://koerner.library.ubc.ca/"}> </LibraryComponent>
+
+        <LibraryComponent name={"Woodward Library"} hours={["8am", "10pm"]} address={"2198 Health Sciences Mall"} 
+            website={"https://woodward.library.ubc.ca/"}> </LibraryComponent>
         </View>
     )
 }
@@ -75,7 +59,8 @@ const styles = StyleSheet.create({
      },
      body: {
         height: 40, 
-        backgroundColor: "#adada5"
+        // border: "1px gray solid"
+        // backgroundColor: "#adada5"
      },
      bodyText: {
         textAlign: "center",
