@@ -1,5 +1,7 @@
 import React from 'react';
-import { Alert, Button, Linking, SectionList, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
+import { Alert, Button, Linking, SectionList, StyleSheet, Text, View } from 'react-native';
+import { Card } from 'react-native-paper';
+import { Divider } from 'react-native-paper';
 
 const Contacts = () => {
   const data = [
@@ -8,8 +10,8 @@ const Contacts = () => {
       data: [
         { key: '1', label: 'General Inquiries', value: 'Tel 604 822 2211 (UBC Directory Assistance)' },
         { key: '2', label: 'Admissions Inquiries', value: 'Tel: 604.822.9836' },
-        { key: '3', label: 'UBC-V Undergraduate Office', value: 'Welcome Centre, Brock Hall 1200 – 1874 East Mall'},
-        { key: '4', label: 'UBC-O Undergraduate Office', value: 'Welcome Centre, University Centre 3272 University Way'},
+        { key: '3', label: 'UBC-V Undergraduate Office', value: 'Welcome Centre, Brock Hall 1200 – 1874 East Mall' },
+        { key: '4', label: 'UBC-O Undergraduate Office', value: 'Welcome Centre, University Centre 3272 University Way' },
       ],
     },
   ];
@@ -25,8 +27,11 @@ const Contacts = () => {
         keyExtractor={(item, index) => item + index}
         renderItem={({ item }) => (
           <View style={styles.itemContainer}>
-            <Text style={styles.label}>{item.label}</Text>
-            <Text style={styles.value}>{item.value}</Text>
+            <Card style={styles.card}>
+              <Text style={styles.label}>{item.label}</Text>
+              <Divider horizontalInset={true} bold={true} />
+              <Text style={styles.value}>{item.value}</Text>
+            </Card>
           </View>
         )}
         renderSectionHeader={({ section: { title } }) => (
@@ -63,27 +68,35 @@ const Contacts = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    padding: 12,
+    backgroundColor: 'white'
   },
   sectionHeader: {
     color: "black",
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 15,
+    backgroundColor: 'white',
+    textAlign: 'center',
   },
   itemContainer: {
     marginBottom: 12,
+    backgroundColor: 'white'
   },
   label: {
     color: "black",
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 4,
+    margin: 4,
+    backgroundColor: 'white',
+    textAlign: 'center',
   },
   value: {
     color: "black",
-    fontSize: 18,
-    marginBottom: 15,
+    fontSize: 16,
+    textAlign: 'center',
+    margin: 4,
+    backgroundColor: 'white'
   },
   socialMedia: {
     flexDirection: "row", // allows multiple buttons on a line
@@ -97,7 +110,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     height: 90,
     width: 90,
-}
+}  card: {
+    backgroundColor: 'white',
+    margin: 4
+  }
 });
 
 export default Contacts;

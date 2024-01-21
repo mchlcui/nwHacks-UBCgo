@@ -74,7 +74,7 @@ function HomeStack() {
       //   },
       // }}
       initialRouteName='Dashboard'>
-      <Stack.Screen options={{ headerShown: false}} name='Dashboard' component={Dashboard} />
+      <Stack.Screen options={{ headerShown: false }} name='Dashboard' component={Dashboard} />
       <Stack.Screen name='Courses' component={Courses} />
       <Stack.Screen name='Weather' component={Weather} />
       <Stack.Screen name='Settings' component={Settings} />
