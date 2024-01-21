@@ -35,6 +35,14 @@ const Dashboard = ({ navigation }) => {
                     Contacts
                 </Text>
             </TouchableOpacity>
+
+            <TouchableOpacity style={styles.btnContainer} onPress={() =>
+                navigation.navigate("Dining")
+            }>
+                <Text style={styles.btnStyle}>
+                    Dining
+                </Text>
+            </TouchableOpacity>
         </View>
     )
 }
