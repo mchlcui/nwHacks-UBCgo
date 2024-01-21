@@ -40,6 +40,14 @@ const Dashboard = ({ navigation }) => {
                     UPass
                 </Text>
             </TouchableOpacity>
+
+            <TouchableOpacity style={styles.btnContainer} onPress={() =>
+                navigation.navigate("Dining")
+            }>
+                <Text style={styles.btnStyle}>
+                    Dining
+                </Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -59,7 +67,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#3232a8",
-        margin: 10,
+        margin: 15,
         borderRadius: 10,
         // paddingVertical: 10,
         // paddingHorizontal: 12,

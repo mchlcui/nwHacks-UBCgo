@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Linking, TouchableOpacity } from "react-native";
 import { Card, Divider } from "react-native-paper";
 
 const LAT = 49.2606;
@@ -51,8 +51,22 @@ const Weather = () => {
                 </Card.Content>
             </Card>
 
-            <Card>
+            <Card style={styles.linksCard}>
+                <TouchableOpacity onPress={() =>
+                    Linking.openURL("https://ready.ubc.ca/take-action/extreme-weather/")}>
+                    <Text style={styles.links}>
+                        UBC extreme weather precautions
+                    </Text>
+                </TouchableOpacity>
+            </Card>
 
+            <Card style={styles.linksCard}>
+                <TouchableOpacity onPress={() =>
+                    Linking.openURL("https://www.ubc.ca/campus-notifications/")}>
+                    <Text style={styles.links}>
+                        UBC campus notifications
+                    </Text>
+                </TouchableOpacity>
             </Card>
         </View>
     )
@@ -61,6 +75,7 @@ const Weather = () => {
 const styles = StyleSheet.create({
     weatherCard: {
         margin: 24,
+        marginBottom: 48
     },
 
     weatherTitle: {
@@ -95,6 +110,18 @@ const styles = StyleSheet.create({
 
     other: {
         textAlign: "center"
+    },
+
+    links: {
+        margin: 8,
+        textAlign: 'center',
+        color: 'blue'
+    },
+
+    linksCard: {
+        marginLeft: 24,
+        marginRight: 24,
+        marginBottom: 8
     }
 })
 

@@ -52,20 +52,24 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   sectionHeader: {
+    color: "white",
     fontSize: 20,
     fontWeight: 'bold',
-    marginBottom: 8,
+    marginBottom: 15,
   },
   itemContainer: {
     marginBottom: 12,
   },
   label: {
+    color: "white",
     fontSize: 16,
     fontWeight: 'bold',
     marginBottom: 4,
   },
   value: {
+    color: "white",
     fontSize: 18,
+    marginBottom: 15,
   },
 
 
