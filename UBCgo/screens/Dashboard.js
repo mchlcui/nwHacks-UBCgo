@@ -1,4 +1,4 @@
-import { Linking, StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
+import { Linking, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Header } from 'react-native-elements';
 
 const Dashboard = ({ navigation }) => {
@@ -73,7 +73,10 @@ const styles = StyleSheet.create({
     header: {
         justifyContent: "center", 
         alignItems: "center", 
-        marginTop: 20
+        marginTop: 45,
+        paddingBottom: 40,
+        borderBottomWidth: 1,
+        borderBottomColor: "black"
     },
     // container: {
     //     // flexDirection: "row", // allows multiple buttons on a line
@@ -85,7 +88,7 @@ const styles = StyleSheet.create({
         flexDirection: "row", // allows multiple buttons on a line
         flexWrap: "wrap", // overflowing button goes to next line
         justifyContent: "space-evenly", 
-        marginTop: 90 // centering buttons in middle vertically
+        marginTop: 80 // centering buttons in middle vertically
     },
     btn: {
         elevation: 8,
