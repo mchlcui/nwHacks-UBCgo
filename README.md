@@ -21,4 +21,6 @@
     npx expo start
     ```
 
-5. Scan the QR code in the terminal with your camera. 
+5. Scan the QR code in the terminal with your camera.
+
+UBCgo serves as a community application for students who want to feel a sense of belonging and engagement. 
