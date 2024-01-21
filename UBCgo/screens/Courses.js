@@ -113,7 +113,7 @@ const Course = ({ navigation }) => {
                             <TouchableOpacity key={i} onPress={() => navigation.navigate('CoursesDetail', { course })}>
                                 <Card key={i} style={styles.courseCard}>
 
-                                    <Card.Title titleStyle={styles.courseText} title={course.code} />
+                                    <Card.Title titleStyle={[styles.courseText, {fontWeight: "bold"}]} title={course.code} />
                                     <Card.Content>
                                         <Divider horizontalInset={true} bold={true}></Divider>
                                         <Text style={styles.courseText}>{course.name}</Text>
