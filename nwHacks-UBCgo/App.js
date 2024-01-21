@@ -1,43 +1,46 @@
-import { BottomTabBar, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import Dashboard from './screens/Dashboard';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StyleSheet } from 'react-native';
+
 import Courses from './screens/Courses';
+import Dashboard from './screens/Dashboard';
 import Settings from './screens/Settings';
 import Weather from './screens/Weather';
 import Library from './screens/Library';
 
 const navBar = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+const themeColor = "#3232a8";
 
 function BottomNavBar() {
   return (
     <navBar.Navigator initialRouteName='Dashboard' screenOptions={{
-      tabBarActiveTintColor: "navy",
+      tabBarActiveTintColor: themeColor,
       tabBarInactiveTintColor: "gray",
     }}>
 
       <navBar.Screen name="Courses" component={Courses} options={
         {
           title: "Courses",
-          headerTitleAlign: "left",
+          headerTitleAlign: "center",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name={focused ? "newspaper" : "newspaper-outline"} size={24} color={color} />
           )
         }
       } />
 
-      <navBar.Screen name="Dashboard" component={Dashboard} options={
+      <navBar.Screen name="Dashboard" component={HomeStack} options={
         {
           title: "Dashboard",
-          headerTitleAlign: "left",
+          headerShown: false,
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name={focused ? "home" : "home-outline"} size={24} color={color} />
           )
         }
       } />
-
+      {/*
       <navBar.Screen name="Weather" component={Weather} options={
         {
           title: "Weather",
@@ -47,11 +50,12 @@ function BottomNavBar() {
           )
         }
       } />
+    */}
 
       <navBar.Screen name="Settings" component={Settings} options={
         {
           title: "Settings",
-          headerTitleAlign: "left",
+          headerTitleAlign: "center",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name={focused ? "settings" : "settings-outline"} size={24} color={color} />
           )
@@ -72,9 +76,17 @@ function BottomNavBar() {
   )
 }
 
+function HomeStack() {
+  return (
+    <Stack.Navigator initialRouteName='Dashboard'>
+      <Stack.Screen name='Dashboard' component={Dashboard} />
+      <Stack.Screen name='Courses' component={Courses} />
+      <Stack.Screen name='Weather' component={Weather} />
+    </Stack.Navigator>
+  )
+}
+
 export default function App() {
-  // Logs.enableExpoCliLogging();
-  console.log("hello");
   return (
     <>
       <NavigationContainer>
