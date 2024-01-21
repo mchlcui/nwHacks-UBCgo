@@ -1,5 +1,6 @@
 # nwHacks-UBCgo
-2024 nwHacks 
+## 2024 nwHacks 
+### UBCgo serves as a community application for students who want to feel a sense of belonging and engagement. 
 
 1. For iOS devices, install "Expo Go" from the App Store. For Android devices, install "Expo" from the Play Store (This application be used to run UBCgo on your device).
 
@@ -22,5 +23,3 @@
     ```
 
 5. Scan the QR code in the terminal with your camera.
-
-UBCgo serves as a community application for students who want to feel a sense of belonging and engagement. 
