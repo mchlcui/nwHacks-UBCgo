@@ -16,7 +16,11 @@
     "react-native": "0.73.2",
     "react-native-animated-spinkit": "^1.5.2",
     "react-native-bounceable": "^0.2.1",
-    "react-native-dynamic-search-bar": "github:WrathChaos/react-native-dynamic-search-bar#expo"
+    "react-native-card": "^1.0.0",
+    "react-native-dynamic-search-bar": "github:WrathChaos/react-native-dynamic-search-bar#expo",
+    "react-native-elements": "^3.4.3",
+    "react-native-paper": "^5.12.1",
+    "react-native-view": "^1.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
