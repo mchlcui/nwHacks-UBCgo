@@ -19,6 +19,22 @@ const Dashboard = ({ navigation }) => {
                     Weather
                 </Text>
             </TouchableOpacity>
+
+            <TouchableOpacity style={styles.btnContainer} onPress={() =>
+                navigation.navigate("Library")
+            }>
+                <Text style={styles.btnStyle}>
+                    Library
+                </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.btnContainer} onPress={() =>
+                navigation.navigate("Contacts")
+            }>
+                <Text style={styles.btnStyle}>
+                    Contacts
+                </Text>
+            </TouchableOpacity>
         </View>
     )
 }

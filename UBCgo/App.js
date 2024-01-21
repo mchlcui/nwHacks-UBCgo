@@ -64,26 +64,6 @@ function BottomNavBar() {
         }
       } />
 
-      <navBar.Screen name="Contacts" component={Contacts} options={
-        {
-          title: "Contacts",
-          headerTitleAlign: "left",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? "call" : "call-outline"} size={24} color={color} />
-          )
-        }
-      } />
-
-      <navBar.Screen name="Library" component={Library} options={
-        {
-          title: "Library",
-          headerTitleAlign: "left",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? "library" : "library-outline"} size={24} color={color} />
-          )
-        }
-      } />
-
     </navBar.Navigator>
   )
 }
@@ -96,6 +76,8 @@ function HomeStack() {
       <Stack.Screen name='Weather' component={Weather} />
       <Stack.Screen name='Settings' component={Settings} />
       <Stack.Screen name='CoursesDetail' component={CoursesDetail} />
+      <Stack.Screen name='Library' component={Library} />
+      <Stack.Screen name='Contacts' component={Contacts} />
     </Stack.Navigator>
   )
 }
