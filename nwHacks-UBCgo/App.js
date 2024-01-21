@@ -7,6 +7,7 @@ import Dashboard from './screens/Dashboard';
 import Courses from './screens/Courses';
 import Settings from './screens/Settings';
 import Weather from './screens/Weather';
+import Contacts from './screens/Contacts';
 
 const navBar = createBottomTabNavigator();
 
@@ -53,6 +54,16 @@ function BottomNavBar() {
           headerTitleAlign: "left",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name={focused ? "settings" : "settings-outline"} size={24} color={color} />
+          )
+        }
+      } />
+
+      <navBar.Screen name="Contacts" component={Contacts} options={
+        {
+          title: "Contacts",
+          headerTitleAlign: "left",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? "contacts" : "call-outline"} size={24} color={color} />
           )
         }
       } />
