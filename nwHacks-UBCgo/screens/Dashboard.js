@@ -1,12 +1,22 @@
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-const Dashboard = () => {
+const Dashboard = ({ navigation }) => {
     return (
         <View>
             {/* <Text>My Nuts</Text> */}
-            <TouchableOpacity style={styles.btnContainer}>
+            <TouchableOpacity style={styles.btnContainer} onPress={() =>
+                navigation.navigate("Courses")
+            }>
                 <Text style={styles.btnStyle}>
                     Courses
+                </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.btnContainer} onPress={() =>
+                navigation.navigate("Weather")
+            }>
+                <Text style={styles.btnStyle}>
+                    Weather
                 </Text>
             </TouchableOpacity>
         </View>
