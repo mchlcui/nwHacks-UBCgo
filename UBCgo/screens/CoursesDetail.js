@@ -91,10 +91,10 @@ function CoursesDetail({ route, navigation }) {
                     <Divider horizontalInset={true} bold={true}></Divider>
                     <Card.Content>
                         <Text style={styles.textTop}>Name: {course.name}{"\n"}</Text>
-                        <Text>Credit:{course.cred}{"\n"}</Text>
+                        <Text>Credit: {course.cred}{"\n"}</Text>
                         <Text>Prereq: {course.prer}{"\n"}</Text>
-                        <Text>Coreq:{course.creq}{"\n"}</Text>
-                        <Text>Dependent:{dependents}{"\n"}</Text>
+                        <Text>Coreq: {course.creq}{"\n"}</Text>
+                        <Text>Dependent: {dependents}{"\n"}</Text>
                         <Text>Description: {course.desc}{"\n"}</Text>
                         <Text>Course Average: {average}%{"\n"}</Text>
                         <Text>Course High: {high}%{"\n"}</Text>
