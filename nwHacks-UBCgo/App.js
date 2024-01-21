@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet } from 'react-native';
 import Courses from './screens/Courses';
+import Dashboard from './screens/Dashboard';
 import Settings from './screens/Settings';
 import Weather from './screens/Weather';
 
