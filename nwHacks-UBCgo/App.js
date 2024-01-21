@@ -7,6 +7,7 @@ import Dashboard from './screens/Dashboard';
 import Courses from './screens/Courses';
 import Settings from './screens/Settings';
 import Weather from './screens/Weather';
+import Library from './screens/Library';
 
 const navBar = createBottomTabNavigator();
 
@@ -53,6 +54,16 @@ function BottomNavBar() {
           headerTitleAlign: "left",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name={focused ? "settings" : "settings-outline"} size={24} color={color} />
+          )
+        }
+      } />
+
+      <navBar.Screen name="Library" component={Library} options={
+        {
+          title: "Library",
+          headerTitleAlign: "left",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? "library" : "library-outline"} size={24} color={color} />
           )
         }
       } />
