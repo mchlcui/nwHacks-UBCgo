@@ -9,11 +9,12 @@ import Settings from './screens/Settings';
 import Weather from './screens/Weather';
 
 const navBar = createBottomTabNavigator();
+const themeColor = "#3232a8";
 
 function BottomNavBar() {
   return (
     <navBar.Navigator initialRouteName='Dashboard' screenOptions={{
-      tabBarActiveTintColor: "navy",
+      tabBarActiveTintColor: themeColor,
       tabBarInactiveTintColor: "gray",
     }}>
 
