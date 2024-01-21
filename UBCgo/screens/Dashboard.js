@@ -1,53 +1,58 @@
-import { Linking, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Linking, StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
+import { Header } from 'react-native-elements';
 
 const Dashboard = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <TouchableOpacity style={styles.btnContainer} onPress={() =>
+            <Header containerStyle={styles.header}
+            backgroundImage={{uri: "https://logowik.com/content/uploads/images/ubc-university-of-british-columbia3090.logowik.com.webp"}} />
+            <View style={styles.btnContainer}>
+            <TouchableOpacity style={styles.btn} onPress={() =>
                 navigation.navigate("Courses")
             }>
-                <Text style={styles.btnStyle}>
+                <Text style={styles.btnTxt}>
                     Courses
                 </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnContainer} onPress={() =>
+            <TouchableOpacity style={styles.btn} onPress={() =>
                 navigation.navigate("Weather")
             }>
-                <Text style={styles.btnStyle}>
+                <Text style={styles.btnTxt}>
                     Weather
                 </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnContainer} onPress={() =>
+            <TouchableOpacity style={styles.btn} onPress={() =>
                 navigation.navigate("Library")
             }>
-                <Text style={styles.btnStyle}>
+                <Text style={styles.btnTxt}>
                     Library
                 </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnContainer} onPress={() =>
+            <TouchableOpacity style={styles.btn} onPress={() =>
                 navigation.navigate("Contacts")
             }>
-                <Text style={styles.btnStyle}>
+                <Text style={styles.btnTxt}>
                     Contacts
                 </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnContainer} onPress={handleUPassPress}>
-                <Text style={styles.btnStyle}>
+            <TouchableOpacity style={styles.btn} onPress={handleUPassPress}>
+                <Text style={styles.btnTxt}>
                     UPass
                 </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btnContainer} onPress={() =>
+            <TouchableOpacity style={styles.btn} onPress={() =>
                 navigation.navigate("Dining")
             }>
-                <Text style={styles.btnStyle}>
+                <Text style={styles.btnTxt}>
                     Dining
                 </Text>
             </TouchableOpacity>
+            </View>
         </View>
     )
 }
@@ -57,24 +62,34 @@ const handleUPassPress = () => {
     };
 
 const styles = StyleSheet.create({
-    container: {
+    header: {
+        justifyContent: "center", 
+        alignItems: "center", 
+        marginTop: 30
+    },
+    // container: {
+    //     // flexDirection: "row", // allows multiple buttons on a line
+    //     // flexWrap: "wrap", // overflowing button goes to next line
+    //     // justifyContent: "space-evenly", 
+    //     // alignItems: "center"
+    // },
+    btnContainer: {
         flexDirection: "row", // allows multiple buttons on a line
         flexWrap: "wrap", // overflowing button goes to next line
-        justifyContent: "center" // centering buttons
+        justifyContent: "space-evenly", 
+        marginTop: 150 // centering buttons in middle vertically
     },
-    btnContainer: {
+    btn: {
         elevation: 8,
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#3232a8",
         margin: 15,
         borderRadius: 10,
-        // paddingVertical: 10,
-        // paddingHorizontal: 12,
         height: 100,
-        width: 100
+        width: 100,
     },
-    btnStyle: {
+    btnTxt: {
         color: "white",
         fontWeight: "bold",
         fontSize: 16

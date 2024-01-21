@@ -418,7 +418,7 @@ const Dining = () => {
     }, []);
 
     return (
-        <View>
+        <View style={styles.container}>
             <MapView
                 provider={PROVIDER_GOOGLE}
                 style={styles.map}
@@ -438,9 +438,14 @@ const Dining = () => {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        alignItems: 'center',
+        flex: 1,
+        justifyContent: 'center'
+    },
     map: {
-        width: '100%',
-        height: '100%',
+        width: '80%',
+        height: '80%'
     }
 })
 
