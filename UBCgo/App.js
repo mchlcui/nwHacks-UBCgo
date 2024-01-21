@@ -16,7 +16,7 @@ import Events from './screens/Events';
 
 const navBar = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
-const themeColor = "#3232a8"; // #3232a8
+const themeColor = "#6488ea"; // #3232a8
 
 function BottomNavBar() {
   return (

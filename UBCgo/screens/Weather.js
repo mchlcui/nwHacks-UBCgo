@@ -5,7 +5,7 @@ import { Card, Divider } from "react-native-paper";
 const LAT = 49.2606;
 const LONG = -123.2460;
 const KEY = "74f069bf11e7c490ef33aa301a6cec35";
-const themeColor = "#3232a8";
+const themeColor = "#6488ea";
 
 const Weather = () => {
     const [temp, setTemp] = useState(0.0);
@@ -45,7 +45,7 @@ const Weather = () => {
                         {weatherType}
                     </Text>
                     <Text style={styles.other}>
-                        Pressure: {pressure} hPa {"\n"} Humidity: {humidity}% {"\n"} Wind speed: {windSpeed} m/s
+                        Pressure: {pressure} hPa {"\n\n"} Humidity: {humidity}% {"\n\n"} Wind speed: {windSpeed} m/s {"\n"}
                     </Text>
                     <Divider horizontalInset={true} bold={true}></Divider>
                 </Card.Content>
@@ -55,7 +55,7 @@ const Weather = () => {
                 <TouchableOpacity onPress={() =>
                     Linking.openURL("https://ready.ubc.ca/take-action/extreme-weather/")}>
                     <Text style={styles.links}>
-                        UBC extreme weather precautions
+                        UBC Extreme Weather Precautions
                     </Text>
                 </TouchableOpacity>
             </Card>
@@ -64,7 +64,7 @@ const Weather = () => {
                 <TouchableOpacity onPress={() =>
                     Linking.openURL("https://www.ubc.ca/campus-notifications/")}>
                     <Text style={styles.links}>
-                        UBC campus notifications
+                        UBC Campus Notifications
                     </Text>
                 </TouchableOpacity>
             </Card>
@@ -75,7 +75,9 @@ const Weather = () => {
 const styles = StyleSheet.create({
     weatherCard: {
         margin: 24,
-        marginBottom: 48
+        marginBottom: 48,
+        shadowColor: "black",
+        shadowRadius: 10
     },
 
     weatherTitle: {
@@ -89,16 +91,18 @@ const styles = StyleSheet.create({
 
     weatherSubtitle: {
         textAlign: "center",
-        marginBottom: 8
+        marginBottom: 10
     },
 
     currentTemp: {
-        marginTop: 56,
+        marginTop: 25,
+        marginBottom: 10,
         textAlign: "center",
         fontSize: 28
     },
 
     body: {
+        marginBottom: 5,
         textAlign: "center",
     },
 
@@ -113,6 +117,7 @@ const styles = StyleSheet.create({
     },
 
     links: {
+        fontSize: 16,
         margin: 8,
         textAlign: 'center',
         color: 'blue'
@@ -121,7 +126,10 @@ const styles = StyleSheet.create({
     linksCard: {
         marginLeft: 24,
         marginRight: 24,
-        marginBottom: 8
+        marginBottom: 8,
+        padding: 10,
+        shadowColor: "black",
+        shadowRadius: 10
     }
 })
 
