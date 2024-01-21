@@ -414,12 +414,12 @@ const Dining = () => {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        flex: 1,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        flex: 1
     },
     map: {
-        width: '80%',
-        height: '80%'
+        width: '90%',
+        height: '90%'
     }
 })
 
