@@ -23,7 +23,7 @@ function BottomNavBar() {
       tabBarInactiveTintColor: "gray",
     }}>
 
-      <navBar.Screen name="Courses" component={courseStack} options={
+      <navBar.Screen name="Courses" component={CourseStack} options={
         {
           title: "Courses",
           headerShown: false,
@@ -100,7 +100,7 @@ function HomeStack() {
   )
 }
 
-function courseStack() {
+function CourseStack() {
   return (
     <Stack.Navigator initialRouteName='Courses'>
       <Stack.Screen name='Courses' component={Courses} />
