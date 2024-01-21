@@ -1,6 +1,9 @@
 import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 import { useEffect, useState } from 'react';
+import { Card } from 'react-native-paper';
+
+const themeColor = "#3232a8";
 
 let POIs = [
     {
@@ -148,36 +151,6 @@ let POIs = [
     }
 ]
 
-const dayStyle = [
-    {
-        "featureType": "administrative.land_parcel",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "labels.text",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "road.local",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    }
-]
-
 const nightStyle = [
     {
         "elementType": "geometry",
@@ -204,29 +177,11 @@ const nightStyle = [
         ]
     },
     {
-        "featureType": "administrative.land_parcel",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
         "featureType": "administrative.locality",
         "elementType": "labels.text.fill",
         "stylers": [
             {
                 "color": "#d59563"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "labels.text",
-        "stylers": [
-            {
-                "visibility": "off"
             }
         ]
     },
@@ -312,15 +267,6 @@ const nightStyle = [
         ]
     },
     {
-        "featureType": "road.local",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
         "featureType": "transit",
         "elementType": "geometry",
         "stylers": [
@@ -393,10 +339,16 @@ const Dining = () => {
 
     return (
         <View style={styles.container}>
+
+            <Text style={styles.title}>
+                Dining options in the area
+
+            </Text>
+
             <MapView
                 provider={PROVIDER_GOOGLE}
                 style={styles.map}
-                customMapStyle={currentTime > 18 || currentTime < 6 ? nightStyle : dayStyle}
+                customMapStyle={currentTime > 18 || currentTime < 6 ? nightStyle : []}
                 onRegionChange={onRegionChange}
                 initialRegion={{
                     latitude: 49.2606,
@@ -415,11 +367,23 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         justifyContent: 'center',
-        flex: 1
+        flex: 1,
     },
     map: {
         width: '90%',
-        height: '90%'
+        height: '90%',
+        borderWidth: 4,
+        borderColor: themeColor,
+        borderRadius: 8
+    },
+
+    titleContainer: {
+        margin: 4
+    },
+
+    title: {
+        margin: 4,
+        fontWeight: 'bold'
     }
 })
 
