@@ -1,7 +1,7 @@
 # nwHacks-UBCgo
 2024 nwHacks 
 
-1. For iOS devices, install "Expo Go" from the App Store. For Android devices, install "Expo" from the Play Store (this will be used to run the application on your device).
+1. For iOS devices, install "Expo Go" from the App Store. For Android devices, install "Expo" from the Play Store (This application be used to run UBCgo on your device).
 
 2. Navigate to the "UBCgo" directory using the terminal or command prompt.
    
