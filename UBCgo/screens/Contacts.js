@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Button, Linking, SectionList, StyleSheet, Text, View } from 'react-native';
+import { Alert, Button, Linking, SectionList, StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { Card } from 'react-native-paper';
 import { Divider } from 'react-native-paper';
 
@@ -9,7 +9,7 @@ const Contacts = () => {
       title: 'UBC Contact Info',
       data: [
         { key: '1', label: 'General Inquiries', value: 'Tel 604 822 2211 (UBC Directory Assistance)' },
-        { key: '2', label: 'Admissions Inquiries', value: 'Tel: 604.822.9836' },
+        { key: '2', label: 'Admissions Inquiries', value: 'Tel: 604 822 9836' },
         { key: '3', label: 'UBC-V Undergraduate Office', value: 'Welcome Centre, Brock Hall 1200 – 1874 East Mall' },
         { key: '4', label: 'UBC-O Undergraduate Office', value: 'Welcome Centre, University Centre 3272 University Way' },
       ],
@@ -38,10 +38,6 @@ const Contacts = () => {
           <Text style={styles.sectionHeader}>{title}</Text>
         )}
       />
-      {/* <Button
-        title="Check Out Our Instagram!"
-        onPress={handleInstagramPress}
-      /> */}
 
       <View style={styles.socialMedia}>
         <TouchableOpacity onPress={() =>  Linking.openURL('https://www.instagram.com/universityofbc/?hl=en').catch(() => Alert.alert('Unable to open Instagram'))}>
@@ -56,11 +52,6 @@ const Contacts = () => {
             <Image style={styles.logo} source={{uri: 'https://static-00.iconduck.com/assets.00/facebook-icon-512x512-seb542ju.png'}} />
         </TouchableOpacity>
       </View>
-
-      {/* <Button
-        title="Call us"
-        onPress={() => Alert.alert('Simple Button pressed')}
-      /> */}
     </View>
   );
 };
@@ -81,7 +72,7 @@ const styles = StyleSheet.create({
   },
   itemContainer: {
     marginBottom: 12,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   label: {
     color: "black",
@@ -101,16 +92,15 @@ const styles = StyleSheet.create({
   socialMedia: {
     flexDirection: "row", // allows multiple buttons on a line
     flexWrap: "wrap", // overflowing button goes to next line
-    justifyContent: "space-between", 
+    justifyContent: "space-around", 
     marginBottom: 30
   },
   logo: {
-    // alignItems: "center",
-    // justifyContent: "center",
     borderRadius: 10,
-    height: 90,
-    width: 90,
-}  card: {
+    height: 70,
+    width: 70,
+  },
+  card: {
     backgroundColor: 'white',
     margin: 4
   }
