@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     header: {
         justifyContent: "center", 
         alignItems: "center", 
-        marginTop: 30
+        marginTop: 20
     },
     // container: {
     //     // flexDirection: "row", // allows multiple buttons on a line
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
         flexDirection: "row", // allows multiple buttons on a line
         flexWrap: "wrap", // overflowing button goes to next line
         justifyContent: "space-evenly", 
-        marginTop: 150 // centering buttons in middle vertically
+        marginTop: 90 // centering buttons in middle vertically
     },
     btn: {
         elevation: 8,
