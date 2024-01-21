@@ -86,14 +86,15 @@ const Course = ({ navigation }) => {
 
             <SearchBar
 
-                fontSize={24}
+                fontSize={16}
                 fontColor="#fdfdfd"
                 iconColor="#fdfdfd"
                 shadowColor="#282828"
+                margin={8}
                 // cancelIconColor="green"
                 backgroundColor="white"
                 spinnerVisibility={spinnerVisibility}
-                placeholder="Search any courses ..."
+                //placeholder="Search any courses ..."
                 fontFamily="BurbankBigCondensed-Black"
                 // shadowStyle={styles.searchBarShadowStyle}
                 onChangeText={handleOnChangeText}
