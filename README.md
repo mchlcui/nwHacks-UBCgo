@@ -9,7 +9,7 @@
     cd UBCgo
     ```
 
-3. If Node modules are not already installed please enter into the terminal.
+3. If Node modules are not already installed please enter the following into the terminal.
 
     ```bash
     npm install
