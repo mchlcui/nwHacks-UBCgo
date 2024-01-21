@@ -1,11 +1,11 @@
 
 import React, { useEffect, useState } from "react";
-import { ScrollView, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import SearchBar from "react-native-dynamic-search-bar";
 import { Divider, Text } from 'react-native-elements';
 import { Card } from "react-native-paper";
 
-function Course() {
+const Course = ({ navigation }) => {
     
     const [searchText, setSearchText] = useState('');
     const [spinnerVisibility, setSpinnerVisibility] = useState(false);
@@ -108,16 +108,20 @@ function Course() {
                     
                     if (searchText.length >= 3) {
                         return (
-                            <Card key ={i} style={styles.courseCard}>
-                            
-                                <Card.Title style={styles.courseTitle} title={course.code} />
-                                <Divider horizontalInset={true} bold={true}></Divider>
-                                <Card.Content>
-                                    <Text>{course.name}</Text>
-                                    <Text>Credit:{course.cred}</Text>
+                            <TouchableOpacity key={i} onPress={() => navigation.navigate('CoursesDetail', {course})}>
+                                <Card key ={i} style={styles.courseCard}>
+                                
+                                    <Card.Title style={styles.courseTitle} title={course.code} />
                                     <Divider horizontalInset={true} bold={true}></Divider>
-                                </Card.Content>
-                            </Card>
+                                    <Card.Content>
+                                        <Text>{course.name}</Text>
+                                        <Text>Credit:{course.cred}</Text>
+                                        <Divider horizontalInset={true} bold={true}></Divider>
+                                    </Card.Content>
+                                </Card>
+                            </TouchableOpacity>
+
+
                         )
                     }
                 })}

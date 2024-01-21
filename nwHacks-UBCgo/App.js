@@ -4,7 +4,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet } from 'react-native';
 
+import Contacts from './screens/Contacts';
 import Courses from './screens/Courses';
+import CoursesDetail from './screens/CoursesDetail';
 import Dashboard from './screens/Dashboard';
 import Settings from './screens/Settings';
 import Weather from './screens/Weather';
@@ -20,10 +22,10 @@ function BottomNavBar() {
       tabBarInactiveTintColor: "gray",
     }}>
 
-      <navBar.Screen name="Courses" component={Courses} options={
+      <navBar.Screen name="Courses" component={courseStack} options={
         {
           title: "Courses",
-          headerTitleAlign: "center",
+          headerShown: false,
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name={focused ? "newspaper" : "newspaper-outline"} size={24} color={color} />
           )
@@ -61,6 +63,16 @@ function BottomNavBar() {
         }
       } />
 
+      <navBar.Screen name="Contacts" component={Contacts} options={
+        {
+          title: "Contacts",
+          headerTitleAlign: "left",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? "contacts" : "call-outline"} size={24} color={color} />
+          )
+        }
+      } />
+
     </navBar.Navigator>
   )
 }
@@ -71,6 +83,17 @@ function HomeStack() {
       <Stack.Screen name='Dashboard' component={Dashboard} />
       <Stack.Screen name='Courses' component={Courses} />
       <Stack.Screen name='Weather' component={Weather} />
+      <Stack.Screen name='Settings' component={Settings} />
+      <Stack.Screen name='CoursesDetail' component={CoursesDetail} />
+    </Stack.Navigator>
+  )
+}
+
+function courseStack() {
+  return (
+    <Stack.Navigator initialRouteName='Courses'>
+      <Stack.Screen name='Courses' component={Courses} />
+      <Stack.Screen name='CoursesDetail' component={CoursesDetail} />
     </Stack.Navigator>
   )
 }
