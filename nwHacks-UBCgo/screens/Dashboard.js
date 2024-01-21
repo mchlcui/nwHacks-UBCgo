@@ -15,21 +15,21 @@ const Dashboard = () => {
 
 const styles = StyleSheet.create({
     btnContainer: {
-      elevation: 8,
-      alignItems: "center",
-      justifyContent: "center",
-      backgroundColor: "#3232a8",
-      borderRadius: 10,
-      // paddingVertical: 10,
-      // paddingHorizontal: 12,
-      height: 100,
-      width: 100
+        elevation: 8,
+        alignItems: "center",
+        justifyContent: "center",
+        backgroundColor: "#3232a8",
+        borderRadius: 10,
+        // paddingVertical: 10,
+        // paddingHorizontal: 12,
+        height: 100,
+        width: 100
     },
     btnStyle: {
-      color:"white",
-      fontWeight: "bold",
-      fontSize: 16
+        color: "white",
+        fontWeight: "bold",
+        fontSize: 16
     }
-  });
+});
 
 export default Dashboard;
