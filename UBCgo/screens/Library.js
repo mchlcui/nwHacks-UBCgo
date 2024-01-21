@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         padding: 15,
         shadowColor: "black",
-        shadowRadius: 5,
+        shadowRadius: 5
     },
     cardTitle: {
         fontWeight: "bold"
