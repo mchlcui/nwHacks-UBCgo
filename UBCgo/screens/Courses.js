@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
 
     courseTitle: {
         paddingTop: 24,
-        margin: 24,
+        margin: 10,
         fontSize: 36,
         alignItems: "center",
         justifyContent: "center",
@@ -150,6 +150,7 @@ const styles = StyleSheet.create({
     },
 
     courseText: {
+        margin: 14,
         color: "white"
     },
 
