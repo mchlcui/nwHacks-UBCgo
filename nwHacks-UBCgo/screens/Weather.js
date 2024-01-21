@@ -14,6 +14,7 @@ const Weather = () => {
     const [weatherType, setWeatherType] = useState("");
     const [pressure, setPressure] = useState(0.0);
     const [humidity, setHumidity] = useState(0.0);
+    const [windSpeed, setWindSpeed] = useState(0.0);
 
 
     fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + LAT + "&lon=" + LONG + "&appid=" + KEY)
@@ -23,6 +24,10 @@ const Weather = () => {
             setLow(data.main.temp_min);
             setHigh(data.main.temp_max);
             setWeatherType(data.weather[0].main);
+            setPressure(data.main.pressure);
+            setHumidity(data.main.humidity);
+            setWindSpeed(data.wind.speed);
+            console.log(data);
         })
 
     return (
@@ -38,6 +43,9 @@ const Weather = () => {
                         L: {(low - 273.15).toFixed(1)} H: {(high - 273.15).toFixed(1)}</Text>
                     <Text style={styles.text}>
                         {weatherType}
+                    </Text>
+                    <Text style={styles.other}>
+                        Pressure: {pressure} hPa {"\n"} Humidity: {humidity}% {"\n"} Wind speed: {windSpeed} m/s
                     </Text>
                     <Divider horizontalInset={true} bold={true}></Divider>
                 </Card.Content>
@@ -81,8 +89,12 @@ const styles = StyleSheet.create({
 
     text: {
         textAlign: "center",
-        marginBottom: 56,
+        marginBottom: 28,
         fontWeight: "700"
+    },
+
+    other: {
+        textAlign: "center"
     }
 })
 
