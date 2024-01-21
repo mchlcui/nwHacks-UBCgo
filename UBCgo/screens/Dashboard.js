@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { Linking, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 const Dashboard = ({ navigation }) => {
     return (
@@ -34,9 +34,19 @@ const Dashboard = ({ navigation }) => {
                     Contacts
                 </Text>
             </TouchableOpacity>
+
+            <TouchableOpacity style={styles.btnContainer} onPress={handleUPassPress}>
+                <Text style={styles.btnStyle}>
+                    UPass
+                </Text>
+            </TouchableOpacity>
         </View>
     )
 }
+
+const handleUPassPress = () => {
+    Linking.openURL('https://upassbc.translink.ca/');
+    };
 
 const styles = StyleSheet.create({
     container: {
