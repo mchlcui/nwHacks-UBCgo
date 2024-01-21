@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet } from 'react-native';
 
@@ -14,16 +14,18 @@ import Library from './screens/Library'
 
 const navBar = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
-const themeColor = "#3232a8";
+const themeColor = "#3232a8"; // #3232a8
 
 function BottomNavBar() {
   return (
-    <navBar.Navigator initialRouteName='Dashboard' screenOptions={{
+    <navBar.Navigator
+    initialRouteName='Dashboard' screenOptions={{
       tabBarActiveTintColor: themeColor,
       tabBarInactiveTintColor: "gray",
     }}>
 
-      <navBar.Screen name="Courses" component={CourseStack} options={
+      <navBar.Screen name="Courses" component={CourseStack}
+      options={
         {
           title: "Courses",
           headerShown: false,
@@ -42,22 +44,12 @@ function BottomNavBar() {
           )
         }
       } />
-      {/*
-      <navBar.Screen name="Weather" component={Weather} options={
-        {
-          title: "Weather",
-          headerTitleAlign: "left",
-          tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? "rainy" : "rainy-outline"} size={24} color={color} />
-          )
-        }
-      } />
-    */}
 
       <navBar.Screen name="Settings" component={Settings} options={
         {
           title: "Settings",
           headerTitleAlign: "center",
+          // headerStyle: "black",
           tabBarIcon: ({ color, focused }) => (
             <Ionicons name={focused ? "settings" : "settings-outline"} size={24} color={color} />
           )
@@ -70,9 +62,18 @@ function BottomNavBar() {
 
 function HomeStack() {
   return (
-    <Stack.Navigator initialRouteName='Dashboard'>
+    <Stack.Navigator 
+      screenOptions={{
+        headerStyle: { // navbar header background 
+          backgroundColor: 'black',
+        },
+        headerTitleStyle: { // navbar header text
+          color: 'white'
+        },
+      }}
+      initialRouteName='Dashboard'>
       <Stack.Screen name='Dashboard' component={Dashboard} />
-      <Stack.Screen name='Courses' component={Courses} />
+      <Stack.Screen name='Courses' headerTitleStyle={backgroundColor="black"} component={Courses} />
       <Stack.Screen name='Weather' component={Weather} />
       <Stack.Screen name='Settings' component={Settings} />
       <Stack.Screen name='CoursesDetail' component={CoursesDetail} />
@@ -84,7 +85,14 @@ function HomeStack() {
 
 function CourseStack() {
   return (
-    <Stack.Navigator initialRouteName='Courses'>
+    <Stack.Navigator initialRouteName='Courses' screenOptions={{
+      headerStyle: { // navbar header background 
+        backgroundColor: 'black',
+      },
+      headerTitleStyle: { // navbar header text
+        color: 'white'
+      },
+    }}>
       <Stack.Screen name='Courses' component={Courses} />
       <Stack.Screen name='CoursesDetail' component={CoursesDetail} />
     </Stack.Navigator>
@@ -92,9 +100,12 @@ function CourseStack() {
 }
 
 export default function App() {
+  const navTheme = DefaultTheme;
+  navTheme.colors.background = 'black'; // color of background of every page
+
   return (
     <>
-      <NavigationContainer>
+      <NavigationContainer theme={navTheme}>
         <BottomNavBar></BottomNavBar>
       </NavigationContainer>
     </>
@@ -106,6 +117,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   }
 });
