@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Text, View, SectionList, Alert, StyleSheet } from 'react-native';
+import { Button, Text, View, SectionList, Alert, StyleSheet, Linking } from 'react-native';
 
 const Contacts = () => {
   const data = [
@@ -8,9 +8,16 @@ const Contacts = () => {
       data: [
         { key: '1', label: 'General Inquiries', value: 'Tel 604 822 2211 (UBC Directory Assistance)' },
         { key: '2', label: 'Admissions Inquiries', value: 'Tel: 604.822.9836' },
+        { key: '3', label: 'UBC-V Undergraduate Office', value: 'Welcome Centre, Brock Hall 1200 – 1874 East Mall'},
+        { key: '4', label: 'UBC-O Undergraduate Office', value: 'Welcome Centre, University Centre 3272 University Way'},
       ],
     },
   ];
+
+  const handleInstagramPress = () => {
+    const instagramURL = 'https://www.instagram.com/universityofbc/?hl=en';
+    Linking.openURL(instagramURL).catch(() => Alert.alert('Unable to open Instagram'));
+  };
 
   return (
     <View style={styles.container}>
@@ -26,6 +33,10 @@ const Contacts = () => {
         renderSectionHeader={({ section: { title } }) => (
           <Text style={styles.sectionHeader}>{title}</Text>
         )}
+      />
+      <Button
+        title="Check Out Our Instagram!"
+        onPress={handleInstagramPress}
       />
       <Button
         title="Call us"
@@ -56,6 +67,8 @@ const styles = StyleSheet.create({
   value: {
     fontSize: 18,
   },
+
+  
 });
 
 export default Contacts;
