@@ -2,8 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 const Dashboard = ({ navigation }) => {
     return (
-        <View>
-            {/* <Text>My Nuts</Text> */}
+        <View style={styles.container}>
             <TouchableOpacity style={styles.btnContainer} onPress={() =>
                 navigation.navigate("Courses")
             }>
@@ -40,11 +39,17 @@ const Dashboard = ({ navigation }) => {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flexDirection: "row", // allows multiple buttons on a line
+        flexWrap: "wrap", // overflowing button goes to next line
+        justifyContent: "center" // centering buttons
+    },
     btnContainer: {
         elevation: 8,
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "#3232a8",
+        margin: 10,
         borderRadius: 10,
         // paddingVertical: 10,
         // paddingHorizontal: 12,
