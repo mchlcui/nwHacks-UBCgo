@@ -12,6 +12,7 @@ import Settings from './screens/Settings';
 import Weather from './screens/Weather';
 import Library from './screens/Library'
 import Dining from './screens/Dining';
+import Events from './screens/Events';
 
 const navBar = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -46,13 +47,13 @@ function BottomNavBar() {
         }
       } />
 
-      <navBar.Screen name="Dining" component={Dining} options={
+      <navBar.Screen name="Events" component={Events} options={
         {
-          title: "Dining",
+          title: "Events",
           headerTitleAlign: "center",
           // headerStyle: "black",
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? "fast-food" : "fast-food-outline"} size={24} color={color} />
+            <Ionicons name={focused ? "megaphone" : "megaphone-outline"} size={24} color={color} />
           )
         }
       } />
@@ -81,6 +82,7 @@ function HomeStack() {
       <Stack.Screen name='Library' component={Library} />
       <Stack.Screen name='Contacts' component={Contacts} />
       <Stack.Screen name='Dining' component={Dining} />
+      <Stack.Screen name="Events" component={Events} />
     </Stack.Navigator>
   )
 }

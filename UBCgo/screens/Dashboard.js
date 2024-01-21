@@ -7,51 +7,59 @@ const Dashboard = ({ navigation }) => {
             <Header containerStyle={styles.header}
             backgroundImage={{uri: "https://logowik.com/content/uploads/images/ubc-university-of-british-columbia3090.logowik.com.webp"}} />
             <View style={styles.btnContainer}>
-            <TouchableOpacity style={styles.btn} onPress={() =>
-                navigation.navigate("Courses")
-            }>
-                <Text style={styles.btnTxt}>
-                    Courses
-                </Text>
-            </TouchableOpacity>
+                <TouchableOpacity style={styles.btn} onPress={() =>
+                    navigation.navigate("Courses")
+                }>
+                    <Text style={styles.btnTxt}>
+                        Courses
+                    </Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btn} onPress={() =>
-                navigation.navigate("Weather")
-            }>
-                <Text style={styles.btnTxt}>
-                    Weather
-                </Text>
-            </TouchableOpacity>
+                <TouchableOpacity style={styles.btn} onPress={() =>
+                    navigation.navigate("Weather")
+                }>
+                    <Text style={styles.btnTxt}>
+                        Weather
+                    </Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btn} onPress={() =>
-                navigation.navigate("Library")
-            }>
-                <Text style={styles.btnTxt}>
-                    Library
-                </Text>
-            </TouchableOpacity>
+                <TouchableOpacity style={styles.btn} onPress={() =>
+                    navigation.navigate("Library")
+                }>
+                    <Text style={styles.btnTxt}>
+                        Library
+                    </Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btn} onPress={() =>
-                navigation.navigate("Contacts")
-            }>
-                <Text style={styles.btnTxt}>
-                    Contacts
-                </Text>
-            </TouchableOpacity>
+                <TouchableOpacity style={styles.btn} onPress={() =>
+                    navigation.navigate("Contacts")
+                }>
+                    <Text style={styles.btnTxt}>
+                        Contacts
+                    </Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btn} onPress={handleUPassPress}>
-                <Text style={styles.btnTxt}>
-                    UPass
-                </Text>
-            </TouchableOpacity>
+                <TouchableOpacity style={styles.btn} onPress={handleUPassPress}>
+                    <Text style={styles.btnTxt}>
+                        UPass
+                    </Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity style={styles.btn} onPress={() =>
-                navigation.navigate("Dining")
-            }>
-                <Text style={styles.btnTxt}>
-                    Dining
-                </Text>
-            </TouchableOpacity>
+                <TouchableOpacity style={styles.btn} onPress={() =>
+                    navigation.navigate("Dining")
+                }>
+                    <Text style={styles.btnTxt}>
+                        Dining
+                    </Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.btn} onPress={() =>
+                    navigation.navigate("Events")
+                }>
+                    <Text style={styles.btnTxt}>
+                        Events
+                    </Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -59,7 +67,7 @@ const Dashboard = ({ navigation }) => {
 
 const handleUPassPress = () => {
     Linking.openURL('https://upassbc.translink.ca/');
-    };
+};
 
 const styles = StyleSheet.create({
     header: {
