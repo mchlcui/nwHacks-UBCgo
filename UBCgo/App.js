@@ -10,6 +10,7 @@ import CoursesDetail from './screens/CoursesDetail';
 import Dashboard from './screens/Dashboard';
 import Settings from './screens/Settings';
 import Weather from './screens/Weather';
+import Library from './screens/Library'
 
 const navBar = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -68,7 +69,17 @@ function BottomNavBar() {
           title: "Contacts",
           headerTitleAlign: "left",
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? "contacts" : "call-outline"} size={24} color={color} />
+            <Ionicons name={focused ? "call" : "call-outline"} size={24} color={color} />
+          )
+        }
+      } />
+
+      <navBar.Screen name="Library" component={Library} options={
+        {
+          title: "Library",
+          headerTitleAlign: "left",
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? "library" : "library-outline"} size={24} color={color} />
           )
         }
       } />
