@@ -1,12 +1,12 @@
-import MapView from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 import { StyleSheet, View } from 'react-native';
 
 let POIs = [
     {
         title: "Great Dane Coffee",
         location: {
-            latitude: 0,
-            longitude: 0
+            latitude: 49.270191980712085,
+            longitude: -123.25073608756244
         },
         description: ""
     },
@@ -14,8 +14,8 @@ let POIs = [
     {
         title: "Starbucks - UBC Life Building",
         location: {
-            latitude: 0,
-            longitude: 0
+            latitude: 49.267545498500326,
+            longitude: -123.25008897406985
         },
         description: ""
     },
@@ -23,8 +23,8 @@ let POIs = [
     {
         title: "Tim Hortons - David Lam Research Centre",
         location: {
-            latitude: 0,
-            longitude: 0
+            latitude: 49.26580136098747,
+            longitude: -123.25434807025336
         },
         description: ""
     },
@@ -32,8 +32,8 @@ let POIs = [
     {
         title: "Blue Chip Café",
         location: {
-            latitude: 0,
-            longitude: 0
+            latitude: 49.266725987066124,
+            longitude: -123.24949859365371
         },
         description: ""
     },
@@ -41,8 +41,8 @@ let POIs = [
     {
         title: "Loafe Café",
         location: {
-            latitude: 0,
-            longitude: 0
+            latitude: 49.266011792152554,
+            longitude: -123.2499944540305
         },
         description: ""
     },
@@ -50,8 +50,8 @@ let POIs = [
     {
         title: "Starbucks - UBC Book Store",
         location: {
-            latitude: 0,
-            longitude: 0
+            latitude: 49.26535416047714,
+            longitude: -123.25068745327752
         },
         description: ""
     },
@@ -59,8 +59,8 @@ let POIs = [
     {
         title: "JJ Bean Coffee Roasters",
         location: {
-            latitude: 0,
-            longitude: 0
+            latitude: 49.26643238669642,
+            longitude: -123.2469216317416
         },
         description: ""
     },
@@ -68,8 +68,8 @@ let POIs = [
     {
         title: "The Boulevard Coffe Roasting Co",
         location: {
-            latitude: 0,
-            longitude: 0
+            latitude: 49.26614289162798,
+            longitude: -123.24638937407003
         },
         description: ""
     },
@@ -77,8 +77,8 @@ let POIs = [
     {
         title: "Starbucks - Fred Keiser Building",
         location: {
-            latitude: 0,
-            longitude: 0
+            latitude: 49.262480923278154,
+            longitude: -123.24990354243563
         },
         description: ""
     },
@@ -151,6 +151,18 @@ const Dining = () => {
     const onRegionChange = (region) => {
     }
 
+    const showPOIs = () => {
+        return POIs.map((location, index) => {
+            return (
+                <Marker
+                    key={index}
+                    coordinate={location.location}
+                    title={location.title}
+                />
+            )
+        })
+    }
+
     return (
         <View>
             <MapView
@@ -162,6 +174,7 @@ const Dining = () => {
                     latitudeDelta: 0.01,
                     longitudeDelta: 0.01,
                 }}>
+                {showPOIs()}
 
             </MapView>
         </View>
