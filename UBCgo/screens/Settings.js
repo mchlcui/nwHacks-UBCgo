@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 const Settings = () => {
     return (
         <View>
-            <Text>Balls</Text>
+            <Text>Blank Settings</Text>
         </View>
     )
 }
