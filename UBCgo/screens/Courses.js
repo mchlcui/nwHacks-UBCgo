@@ -111,11 +111,11 @@ const Course = ({ navigation }) => {
                             <TouchableOpacity key={i} onPress={() => navigation.navigate('CoursesDetail', { course })}>
                                 <Card key={i} style={styles.courseCard}>
 
-                                    <Card.Title style={styles.courseTitle} title={course.code} />
+                                    <Card.Title style={styles.courseTitle} titleStyle={styles.courseText} title={course.code} />
                                     <Divider horizontalInset={true} bold={true}></Divider>
                                     <Card.Content>
-                                        <Text>{course.name}</Text>
-                                        <Text>Credit:{course.cred}</Text>
+                                        <Text style={styles.courseText}>{course.name}</Text>
+                                        <Text style={styles.courseText}>Credit:{course.cred}</Text>
                                         <Divider horizontalInset={true} bold={true}></Divider>
                                     </Card.Content>
                                 </Card>
@@ -136,7 +136,8 @@ const Course = ({ navigation }) => {
 const styles = StyleSheet.create({
     courseCard: {
         margin: 24,
-        textAlign: "center"
+        textAlign: "center",
+        backgroundColor: "#3232a8"
     },
 
     courseTitle: {
@@ -146,6 +147,10 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         textAlign: "center"
+    },
+
+    courseText: {
+        color: "white"
     },
 
 
