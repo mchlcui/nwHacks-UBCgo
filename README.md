@@ -1,5 +1,5 @@
-# nwHacks-UBCgo
-## 2024 nwHacks 
+# UBCgo
+## 2024 nwHacks Hackathon
 ### UBCgo serves as a mobile application for students who want to feel a sense of belonging and engagement. 
 Some features include but are not limited to: 
 - List of all courses at UBC and their respective averages, with the option to filter and directly access the course website to register for it
