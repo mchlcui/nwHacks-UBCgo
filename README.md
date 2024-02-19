@@ -6,7 +6,6 @@ Some features include but are not limited to:
 - A UBC Events catalog
 - Map with pinpoints to popular restaurants and cafes
 - Live weather at UBC
-- Easily accessible UPass renewal and UBC contacts
 
 1. For iOS devices, install "Expo Go" from the App Store. For Android devices, install "Expo" from the Play Store (This application be used to run UBCgo on your device).
 
